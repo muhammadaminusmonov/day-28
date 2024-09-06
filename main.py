@@ -46,7 +46,7 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_sec}")
     if count > 0:
         global TIMER
-        TIMER = window.after(1, count_down, count - 1)
+        TIMER = window.after(1000, count_down, count - 1)
     else:
         start_timer()
         count_pomodoro = REPS // 2
@@ -78,6 +78,3 @@ reset_btn = Button(text="Reset", command=reset_timer)
 reset_btn.grid(column=2, row=2)
 
 window.mainloop()
-
-
-# text="✔"
